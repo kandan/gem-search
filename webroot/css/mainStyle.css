@@ -1,0 +1,108 @@
+/* ANZ Content CSS */
+
+body{ font-family: Arial, Helvetica, sans-serif;}
+#wrapper {width:100%px; margin:30px 0 0 0; padding:15px 0 0 0px; font-size:12px;}
+#searchform{ width:320px; margin:0; padding:0;}
+#searchform ul {list-style:none; padding:0; margin:0 10px;}
+#searchform li{ margin:5px; padding:0; height:45px;}
+#searchform li input, #searchform li select{ margin:0px 15px 0 0;  width:150px; float:right;}
+#searchform li input.error{background:#CFF;}
+#searchform li label{ margin:0px 15px 0 0; width:100px; float:left; font-size:12px;}
+#searchform li span.error{ text-align:right; width:155px; display:block; float:right; height:25px; margin:0px 15px 0 0px; color:red; }
+.red { background:#FF0000;}
+.blue { background:#00F;}
+.green { background:#00CC00;}
+
+
+div {margin:0; padding:0;}
+p, a{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	color: #317EC2;
+	text-decoration:none;
+	text-indent: 15px;
+}
+
+h1{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16pt;
+	color: #317EC2;
+	text-decoration:none;
+	text-indent: 15px;
+}
+.top{ vertical-align:text-top !important;}
+
+hr { color: #317EC2; width:350px; margin: 25px 0 0 0;}
+
+a:hover{
+	text-decoration:underline;	
+}
+#kandan_logo {
+	background:url(../images/kandan_logo.gif) no-repeat top right ;
+	width: 99%;
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	border-bottom-color: #317EC2;
+	text-align: right;
+	padding-right: 0px;
+	padding-top: 0px;
+	margin:15px -140px 0 0;
+	display:block;
+	height:100px
+}
+
+#fx{margin-top:15px;
+h2 {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14pt;
+	margin-left:15px;
+
+}
+.cont{font-family: Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	color: #317EC2;
+	text-decoration:none;
+	text-indent: 15px;
+}
+
+h4 {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 11pt;
+	margin-left:20px;
+
+}
+body {
+	
+	margin-left: 0px;
+	margin-top: 10px;
+	margin-right: 25px;
+	margin-bottom: 0px;
+}
+
+td {
+	padding:15px 0 0 0;
+	vertical-align:bottom;
+	width:360px;
+	}
+#selectGroup {
+	width: 210px;
+}
+
+.textBox{margin-left:20px; width:150px;}
+#selectbox{margin-left:0px; width:300px;}
+
+#container1 {position:absolute; top:150px; #top:200px; left:450px; z-index:2; width:660px; height:397px; border:1; border-color:#333; border-style:thin; background:#FFF; background-image:url(../images/screen.jpg); background-repeat:no-repeat; background-position:top left; -moz-box-shadow:#CCC 5px 5px 5px;}
+
+#flvContainer {
+	position:absolute;
+	top:70px;
+	left:162px;
+	z-index:10;
+	width:538px;
+	height:352px;
+	}
+	
+	
+/* form style */
+
+

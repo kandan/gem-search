@@ -21,7 +21,7 @@ class DatabaseUser extends Database
 {
   
    private static $db_host       = 'mysql-5.kandan.com.au';
-        private static $db_port       = '3306';
+        private static $db_port  = '3306';
   
 	// private static $db_host       = 'localhost';
 	// private static $db_port       = '8888';
@@ -34,11 +34,11 @@ class DatabaseUser extends Database
       
       // local 
       // $dbMemberName = 'root';
-      //       $dbMemberPass = 'root';
+      // $dbMemberPass = 'root';
 
 	  // Hosted Solution
 	  $dbMemberName = 'mygemt1000';
-	  	  $dbMemberPass = 'npJ7B8Bt';
+	  $dbMemberPass = 'npJ7B8Bt';
 		
 
       $this->dsn = 'mysql:host=' . self::$db_host . ';port=' . 
