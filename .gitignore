@@ -2,7 +2,7 @@
 ./wmv
 .htaccess
 ./webroot/.htaccess
-libraries/*
+./libraries/*
 
 local.pass.php
 ./backups-sql
