@@ -5,11 +5,7 @@ require_once(LIBRARY_PATH . DS . 'Template.php');
 require_once(APP_PATH . DS . 'models' . DS . 'User.php');
 //require_once(APP_PATH . DS . 'models' . DS . 'Cart.php');
 
-/**
-* Contoller for Login.
-*
-* @author Samrah
-*/
+
 class LoginController {
 
 	public function __construct() {

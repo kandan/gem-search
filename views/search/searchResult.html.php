@@ -18,17 +18,9 @@ include_once(INCLUDES_PATH . DS. 'header.php');
 	     <?php
 		    $rowsFound = count($result);
 			
-			if($rowsFound > 0)
-			{
-				// get date.
-				
-				// DateTime dateTime = new DateTime();
-				// 				$year =  datetime.getYear();
-				
-				
+			if($rowsFound > 0){
 				
 				print "<h5><strong>{$rowsFound}</strong> Gem adverts were found according to  your criteria.</h5><br/>";
-		 //show search results.
 		 		print "\n<table class='table'>\n<tr>" .
 				"\n\t<td width = '20%'><strong>ANZ Code</strong></td>" .
 				"\n\t<td width = '15%'><strong>Category</strong></td>" .
@@ -39,7 +31,7 @@ include_once(INCLUDES_PATH . DS. 'header.php');
 				 {
 					print "\n\t<td width = '10%'><strong>Admin</strong></td>";
 				  }
-				 print "\n\t<td width = '10%'><strong>Content</strong></td>\n</tr>";
+				    print "\n\t<td width = '10%'><strong>Content</strong></td>\n</tr>";
 				
 				foreach($result as $results)
 				{	
@@ -55,36 +47,40 @@ include_once(INCLUDES_PATH . DS. 'header.php');
 				   print "\n\t<td>{$results["status"]}</td>";
 				   print "\n\t<td>{$mydate}</td>";
 				   print "\n\t<td>{$results["version"]}</td>"; 
-				  // print "\n\t<td>{$results["price"]}</td>";  
+				  
 				   ?>
-				<?php
+				  <?php
 					if ($user){
 						echo "<td width='115'><a href='".DOMAIN."advert/{$results['id']}/edit/'>Edit</a></td>";
 					}
 					?>
-				   <?php if ($results['status'] != "DISABLED") { ?>
+
+
+				   <?php if ($results['status'] != "DISABLED"){ ?>
 					
-					
-					<?php if ($results['version'] != "Flash Template") { ?>
-				   <td width="115"><a class="btn btn-success" href="<?php echo DOMAIN . "playvideo?code=" . $results['code'] . "&status=" .$results['status'] . "&notes=" .$results['notes']   ?>">View Content</a></td>
-					<?php } else { ?>
-					<td width="115"><a class="btn btn-success" href="<?php echo DOMAIN . "playflash?code=" . $results['code'] . "&status=" .$results['status'] . "&notes=" .$results['notes']   ?>">View template</a></td>
-					<? }    ?>
-				   <?php } else { ?>
-				<td width="115"><a class="btn disabled" >No Content</a></td>
-				<? }    ?>
+							<?php if ($results['version'] != "Flash Template") { ?>
+						   				<td width="115"><a class="btn btn-success" href="<?php echo DOMAIN . "playvideo?code=" . $results['code'] . "&status=" .$results['status'] . "&notes=" .$results['notes']   ?>">View Content</a></td>
+							<?php } else { ?>
+										<td width="115"><a class="btn btn-success" href="<?php echo DOMAIN . "playflash?code=" . $results['code'] . "&status=" .$results['status'] . "&notes=" .$results['notes']   ?>">View template</a></td>
+							<?php }    ?>
+
+				   <?php } else {  ?>
+					<td width="115"><a class="btn disabled" >No Content</a></td>
+
+				<? } ?>
 				
 				<?php
 				   print "\n</tr>";
-				}
-				print "\n</table>";
+				} }
+				   print "\n</table>";
+				   } 	
+				?>
 
-			}
-			else
-			{
-				print "<h4>No Gem Adverts found.</h4>";
-			}
-		 ?>
+
+			
+ 			
+				
+		
 </div>
 <div class = "grid_1"><p></p></div>
 </div>

@@ -5,47 +5,40 @@ abstract class Database
 
   public $dsn;
   public $pdo;
-
-  // public  $db_host       = 'mysql-5.kandan.com.au';
-  //  public  $db_port       = '3306';
-
-  // public $db_host       = 'localhost';
-  //   public $db_port       = '8888';
-  
-  //public $db_name       = 'gemtv_kandan_com_au';
+  public $working_locally = true;
 
 }
 
 
 class DatabaseUser extends Database
 {
-  
-   private static $db_host       = 'mysql-5.kandan.com.au';
-        private static $db_port  = '3306';
-  
-	// private static $db_host       = 'localhost';
-	// private static $db_port       = '8888';
-  
-    private static $db_name       = 'gemtv_kandan_com_au';
     private static $instance;
+
+  
+    //remotely
+     // private static $db_host  = 'localhost';
+     // private static $db_port  = '3306';
+     // private static $dbMemberName  = 'kandan_admin';
+     // private static $dbMemberPass  = 'fishskills31';
+     // private static $db_name = 'kandan_gem_tv';
+   
+    //locally
+     private static $db_host  = 'localhost';
+     private static $db_port  = '3306';
+     private static $dbMemberName  = 'root';
+     private static $dbMemberPass  = 'coop';
+     private static $db_name = 'gem_tv_kandan_com_au';
+  
+
 
    private function __construct() 
    {
-      
-      // local 
-      // $dbMemberName = 'root';
-      // $dbMemberPass = 'root';
-
-	  // Hosted Solution
-	  $dbMemberName = 'mygemt1000';
-	  $dbMemberPass = 'npJ7B8Bt';
-		
 
       $this->dsn = 'mysql:host=' . self::$db_host . ';port=' . 
-                  self::$db_port .  ';dbname=' . self::$db_name;
+      self::$db_port .  ';dbname=' . self::$db_name;
       try 
       {
-         $this->pdo = new PDO($this->dsn, $dbMemberName, $dbMemberPass);
+         $this->pdo = new PDO($this->dsn, self::$dbMemberName, self::$dbMemberPass);
          $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       } 
       catch (PDOException $e) 
@@ -69,35 +62,41 @@ class DatabaseUser extends Database
 
 class DatabaseAdmin extends Database
 {
-	
-   private static $db_host       = 'mysql-5.kandan.com.au';
-         private static $db_port       = '3306';
-   
-   // private static $db_host       = 'localhost';
-   //    private static $db_port       = '8888';
+    //remotely
+     // private static $instance;
+     // private static $db_host  = 'localhost';
+     // private static $db_port  = '3306';
+     // private static $dbAdminName  = 'kandan_admin';
+     // private static $dbAdminPass  = 'fishskills31';
+     // private static $db_name = 'kandan_gem_tv';
   
-   private static $db_name       = 'gemtv_kandan_com_au';
-   private static $instance;
+    //locally
+     private static $instance;
+     private static $db_host  = 'localhost';
+     private static $db_port  = '3306';
+     private static $dbAdminName  = 'root';
+     private static $dbAdminPass  = 'coop';
+     private static $db_name = 'gem_tv_kandan_com_au';
+   
 
 
    private function __construct() 
    {
 	
-	  
-	  // $dbAdminName = 'root';
-	  //       $dbAdminPass = 'root';
-	
-	
-	
-      //Admin
-      $dbAdminName = "mygemt1000";
-            $dbAdminPass = "npJ7B8Bt";
+      // remote 
+      // $dbAdminName = 'kandan_admin';
+      // $dbAdminPass = 'fishskills31';
+
+      // remote 
+      $dbAdminName = 'root';
+      $dbAdminPass = 'coop';
+
 
       $this->dsn = 'mysql:host=' . self::$db_host . ';port=' . 
                   self::$db_port .  ';dbname=' . self::$db_name;
       try 
       {
-         $this->pdo = new PDO($this->dsn, $dbAdminName, $dbAdminPass);
+         $this->pdo = new PDO($this->dsn, self::$dbAdminName, self::$dbAdminPass);
          $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
       } 

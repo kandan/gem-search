@@ -19,7 +19,7 @@ class SearchResultController
     $code = $_GET['code'];
     $category = $_GET['category'];
     $version = $_GET['version'];
- 	$status = $_GET['status'];
+ 	  $status = $_GET['status'];
 	
 	//$sr = new SearchResult();
 	$result = SearchResult::getSearchResult($code, $category, $version, $status);

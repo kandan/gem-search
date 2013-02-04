@@ -1,20 +1,28 @@
 <?php 
 
-define('DB_NAME', 'gemtv_kandan_com_au');
+$working_locally = true;
 
-// working remotely
-define('DB_HOST', 'MYSQL-5.kandan.com.au');
-define('DB_USER', 'mygemt1000');
 
-define('DB_PASS', 'npJ7B8Bt');
-define('DB_PORT', '3306');
+if (!$working_locally){
+
+// if working remotely
+	define('DB_NAME', 'kandan_gem_tv');
+	define('DB_HOST', 'localhost');
+	define('DB_USER', 'kandan_admin');
+	define('DB_PASS', 'fishskills31');
+	define('DB_PORT', '3306');
+} else {
 
 // if working locally
-// define('DB_HOST', 'localhost');
-// define('DB_USER', 'root');
-// 
-// define('DB_PASS', 'root');
-// define('DB_PORT', '8888');
+	define('DB_NAME', 'gem_tv_kandan_com_au');
+	define('DB_HOST', 'localhost');
+	define('DB_USER', 'root');
+	define('DB_PASS', 'coop');
+	define('DB_PORT', '3306');
+
+}
+
+
 
 
 define('DB_HOST_PORT', DB_HOST.':'.DB_PORT);

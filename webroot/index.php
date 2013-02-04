@@ -2,7 +2,7 @@
 
 define('DS', DIRECTORY_SEPARATOR);
 define('APP_PATH', dirname(dirname(__FILE__)));
-define('DOMAIN' , "http://kandan.com.au/gem-search/");
+define('DOMAIN' , "http://gem.kandan.com.au/");
 //define('DOMAIN' , "http://localhost:8888/gem-search/");
 
 //TODO Delete me

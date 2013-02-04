@@ -3,7 +3,7 @@
 require_once(LIBRARY_PATH . DS . 'Database.php');
 
 //added for testing
-require_once(LIBRARY_PATH . DS . 'db.php');
+//equire_once(LIBRARY_PATH . DS . 'db.php');
 
 /**
  * @author Samrah

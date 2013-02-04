@@ -1,0 +1,93 @@
+<?php
+session_start();
+/* search function controller */
+require_once (LIBRARY_PATH . DS . 'Template.php');
+require_once (APP_PATH . DS . 'models' . DS . 'Lock.php');
+require_once (APP_PATH . DS . 'models' . DS . 'Search.php');
+
+class LocksController {
+
+	public function __construct() {
+		$this->template = new Template;
+		$this->template->template_dir = APP_PATH . DS . 'views' . DS . 'locks' . DS;
+	}
+
+	public function () {
+		if (!isset ($_SESSION['user'])) {
+			header("Location: " . DOMAIN . "login/");
+			exit;
+		}
+
+		$adverts = Search :: getAdverts();
+		//var_dump($manu);
+		$data['adverts'] = $adverts;
+
+		// get id of last row
+		$lastId = $data;
+		if (isset ($_SESSION['advert']['error'])) {
+			$this->template->error = $_SESSION['advert']['error'];
+			unset ($_SESSION['advert']['error']);
+		}
+		if (isset ($_SESSION['advert'])) {
+			$this->template->advert = $_SESSION['advert'];
+			unset ($_SESSION['advert']);
+		}
+		$this->template->display('advert.html.php', 'Add advert', $lastId);
+	}
+
+	public function edit($id) {
+		// must be logged in to access this page
+		if (!isset ($_SESSION['user'])) {
+			header("Location: " . DOMAIN . "login/");
+			exit;
+		}
+		if ($_SESSION['user']['user_id'] > 1 && $_SESSION['user']['id'] != $id) {
+			// this user is trying to access a different user
+			header("Location: " . DOMAIN . "login/");
+			exit;
+		}
+
+		
+
+		$this->template->display('edit.html.php', 'Edit Advert', $adverts);
+	}
+
+	public function update($id) {
+
+		// must have some POSTed data
+		// could check for referer here
+		if (!isset ($_POST) || empty ($_POST)) {
+			header("Location: " . DOMAIN . "advert/");
+			exit;
+		}
+
+		// TODO need to validate data
+		
+
+	}
+
+	public function displayUpdated() {
+		
+
+	}
+
+	public function show($id) {
+		
+	}
+
+	public function create() {
+
+		if (!isset ($_SESSION['user'])) {
+			header("Location: /login/");
+			exit;
+		}
+		if ($_SESSION['user']['user_id'] > 1) {
+			header("Location: " . DOMAIN . "advert/");
+			exit;
+		}
+
+		
+
+	}
+
+}
